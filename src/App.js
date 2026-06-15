@@ -1,6 +1,8 @@
-import SearchProducts from "./components/SearchProducts";
 import axios from 'axios';
 import { useEffect, useState } from 'react';
+import { Routes, Route } from 'react-router-dom';
+import Home from './pages/Home';
+import Search from './pages/Search';
 
 function App() {
   const [products, setProducts] = useState([]);
@@ -10,7 +12,6 @@ function App() {
     const fetchProducts = async () => {
       try {
         const response = await axios.get(url);
-        console.log('Data from axios:');
         setProducts(response.data);
       }
       catch (error) {
@@ -22,7 +23,10 @@ function App() {
 
   return (
     <>
-      <SearchProducts products={products} />
+      <Routes>
+        <Route exact path='/o-lure/' element={<Home />} />
+        <Route exact path='/o-lure/search' element={<Search products={products} />} />
+      </Routes>
     </>
   );
 }
