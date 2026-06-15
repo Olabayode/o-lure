@@ -25,7 +25,7 @@ function App() {
     <>
       <Routes>
         <Route exact path='/o-lure/' element={<Home />} />
-        <Route exact path='/o-lure/search' element={<Search products={products} />} />
+        <Route exact path='/o-lure/search' element={<Search products={products} setProducts={setProducts} />} />
       </Routes>
     </>
   );
