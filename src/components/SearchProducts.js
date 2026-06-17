@@ -10,7 +10,7 @@ function SearchProducts(props)
 
   useEffect(() => {
     setSortedProducts(props.products);
-  });
+  }, []);
 
   useEffect(() => {
     if (query !== initialQuery)
