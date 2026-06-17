@@ -4,9 +4,13 @@ import { useSearchParams } from 'react-router-dom';
 function SearchProducts(props)
 {
   const [searchParams, setSearchParams] = useSearchParams();
-  const [query, setQuery] = useState();
-  const [sortedProducts, setSortedProducts] = useState(props.products);
+  const [query, setQuery] = useState('');
+  const [sortedProducts, setSortedProducts] = useState();
   const initialQuery = searchParams.get('query') || '';
+
+  useEffect(() => {
+    setSortedProducts(props.products);
+  });
 
   useEffect(() => {
     if (query !== initialQuery)
@@ -35,29 +39,29 @@ function SearchProducts(props)
 
   return(
     <>
-    <div>
-      <input 
-        type='text'
-        placeholder='Search products...'
-        value={query}
-        onChange={event => {
-          setQuery(event.target.value);
-        }}
-      />
-      <input 
-        type='button' 
-        value='Title'
-        onClick={event => {
-          sort(event.target.value);
-        }}
-      /><input 
-        type='button' 
-        value='Price'
-        onClick={event => {
-          sort(event.target.value);
-        }}
-      />
-    </div>
+      <div>
+        <input 
+          type='text'
+          placeholder='Search products...'
+          value={query}
+          onChange={event => {
+            setQuery(event.target.value);
+          }}
+        />
+        <input 
+          type='button' 
+          value='Title'
+          onClick={event => {
+            sort(event.target.value);
+          }}
+        /><input 
+          type='button' 
+          value='Price'
+          onClick={event => {
+            sort(event.target.value);
+          }}
+        />
+      </div>
       <ul>
         {sortedProducts?.sort((a, b) => a.sortBy - b.sortBy).filter(p => p?.title.toLowerCase().includes(query?.toLowerCase())).map(link => (
           <li key={link.id}>

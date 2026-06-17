@@ -12,7 +12,6 @@ function App() {
     const fetchProducts = async () => {
       try {
         const response = await axios.get(url);
-        setProducts(response.data);
       }
       catch (error) {
         console.log(error.message);
