@@ -4,7 +4,7 @@ function Search(props)
 {
   return(
     <>
-      <SearchProducts products={props.products} />
+      <SearchProducts products={props.products} addToCart={props.addToCart} />
     </>
   );
 }

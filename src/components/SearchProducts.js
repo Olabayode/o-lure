@@ -5,11 +5,11 @@ function SearchProducts(props)
 {
   const [searchParams, setSearchParams] = useSearchParams();
   const [query, setQuery] = useState('');
-  const [sortedProducts, setSortedProducts] = useState(null);
+  const [sortedProducts, setSortedProducts] = useState([]);
   const initialQuery = searchParams.get('query') || '';
 
   useEffect(() => {
-    setSortedProducts(props.products);
+    setSortedProducts(props.products || []);
   }, [props.products]);
 
   useEffect(() => {
@@ -65,6 +65,7 @@ function SearchProducts(props)
         {sortedProducts?.sort((a, b) => a.sortBy - b.sortBy).filter(p => p?.title.toLowerCase().includes(query?.toLowerCase())).map(link => (
           <li key={link.id}>
             <p>{link.title} ${link.price}</p>
+            <button type="button" onClick={() => props.addToCart(link)}>Add</button>
           </li>
         ))}
       </ul>

@@ -4,3 +4,33 @@
 body{
     background-color: aliceblue;
 }
+
+.site-header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 32px;
+    background-color: white;
+    border-bottom: 1px solid #d8e2ec;
+}
+
+.site-header h1{
+    margin: 0;
+    font-size: 28px;
+    text-transform: uppercase;
+}
+
+.site-header nav{
+    display: flex;
+    gap: 20px;
+}
+
+.site-header a{
+    color: #123;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.site-header a.active{
+    text-decoration: underline;
+}
