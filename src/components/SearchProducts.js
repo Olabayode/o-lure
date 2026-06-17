@@ -5,12 +5,12 @@ function SearchProducts(props)
 {
   const [searchParams, setSearchParams] = useSearchParams();
   const [query, setQuery] = useState('');
-  const [sortedProducts, setSortedProducts] = useState();
+  const [sortedProducts, setSortedProducts] = useState(null);
   const initialQuery = searchParams.get('query') || '';
 
   useEffect(() => {
     setSortedProducts(props.products);
-  }, []);
+  }, [props.products]);
 
   useEffect(() => {
     if (query !== initialQuery)
@@ -20,7 +20,6 @@ function SearchProducts(props)
   }, [initialQuery, query, setSearchParams]);
 
   const sort = (criteria) => {
-    console.log(sortedProducts);
     let sortedArray = [...sortedProducts];
     if (criteria === 'Title')
     {
