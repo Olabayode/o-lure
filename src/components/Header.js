@@ -7,6 +7,7 @@ function Header()
       <h1>o-lure</h1>
       <nav>
         <NavLink to="/o-lure/">Home</NavLink>
+        <NavLink to="/o-lure/products">Products</NavLink>
         <NavLink to="/o-lure/search">Search</NavLink>
         <NavLink to="/o-lure/cart">Cart</NavLink>
       </nav>

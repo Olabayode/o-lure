@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
 import Home from './pages/Home';
+import Products from './pages/Products';
 import Search from './pages/Search';
 import Cart from './pages/Cart';
 
@@ -81,6 +82,7 @@ function App() {
       <Header />
       <Routes>
         <Route exact path='/o-lure/' element={<Home />} />
+        <Route exact path='/o-lure/products' element={<Products products={products} addToCart={addToCart} />} />
         <Route exact path='/o-lure/search' element={<Search products={products} setProducts={setProducts} addToCart={addToCart} />} />
         <Route exact path='/o-lure/cart' element={<Cart cart={cart} increaseQuantity={increaseQuantity} decreaseQuantity={decreaseQuantity} removeFromCart={removeFromCart} />} />
       </Routes>
