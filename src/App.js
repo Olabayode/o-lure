@@ -6,6 +6,7 @@ import Home from './pages/Home';
 import Products from './pages/Products';
 import Search from './pages/Search';
 import Cart from './pages/Cart';
+import NotFound from './pages/NotFound';
 
 function App() {
   const [products, setProducts] = useState(null);
@@ -85,6 +86,7 @@ function App() {
         <Route exact path='/o-lure/products' element={<Products products={products} addToCart={addToCart} />} />
         <Route exact path='/o-lure/search' element={<Search products={products} setProducts={setProducts} addToCart={addToCart} />} />
         <Route exact path='/o-lure/cart' element={<Cart cart={cart} increaseQuantity={increaseQuantity} decreaseQuantity={decreaseQuantity} removeFromCart={removeFromCart} />} />
+        <Route exact path='*' element={<NotFound />} />
       </Routes>
     </>
   );
