@@ -81,7 +81,7 @@ function App() {
     <>
       <Header />
       <Routes>
-        <Route exact path='/o-lure/' element={<Home />} />
+        <Route exact path='/o-lure/' element={<Home products={products} />} />
         <Route exact path='/o-lure/products' element={<Products products={products} addToCart={addToCart} />} />
         <Route exact path='/o-lure/search' element={<Search products={products} setProducts={setProducts} addToCart={addToCart} />} />
         <Route exact path='/o-lure/cart' element={<Cart cart={cart} increaseQuantity={increaseQuantity} decreaseQuantity={decreaseQuantity} removeFromCart={removeFromCart} />} />
