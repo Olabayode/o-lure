@@ -20,7 +20,10 @@ function SecondaryBanner()
           Elevated pieces designed for every occasion.
         </span>
 
-        <Link to="/o-lure/products">
+        <Link
+          to="/o-lure/products"
+          onClick={() => window.scrollTo(0, 0)}
+        >
           Discover Collection
         </Link>
 

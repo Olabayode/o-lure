@@ -555,7 +555,7 @@ body{
     display: grid;
     grid-template-columns: 2fr 1fr 1fr 1fr;
     gap: 40px;
-    margin-top: 60px;
+    margin-top: 24px;
     padding: 80px 60px;
     border-top: 1px solid #111;
     background-color: #111;
@@ -594,7 +594,7 @@ body{
 }
 
 .products-page{
-    padding: 60px 32px 80px;
+    padding: 60px 32px 32px;
 }
 
 /* .products-page h1{
@@ -717,7 +717,7 @@ body{
     display: flex;
     align-items: center;
     min-height: 420px;
-    margin-bottom: 80px;
+    margin-bottom: 48px;
     padding: 80px;
     background-image:
     linear-gradient(
@@ -753,7 +753,11 @@ body{
 }
 
 .product-section{
-    margin-bottom: 180px;
+    margin-bottom: 80px;
+}
+
+.product-section:last-child{
+    margin-bottom: 24px;
 }
 
 .product-section h2{
@@ -778,21 +782,50 @@ body{
 
 .section-description{
     max-width: 420px;
-    margin-bottom: 60px;
+    margin-bottom: 28px;
     color: #777;
     font-size: 1.4rem;
     letter-spacing: 1px;
     line-height: 1.8;
 }
 
+.collection-banner-wrap{
+    position: relative;
+    margin-bottom: 50px;
+}
+
 .collection-banner{
     width: 100%;
-
     height: 420px;
-
-    margin-bottom: 50px;
-
+    display: block;
     object-fit: cover;
+}
+
+.collection-toggle-button{
+    position: absolute;
+    left: 50%;
+    bottom: 36px;
+    transform: translateX(-50%);
+    padding: 16px 38px;
+    border: 1px solid white;
+    background-color: white;
+    color: #111;
+    font-size: 1.2rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.collection-toggle-button:hover{
+    background-color: #111;
+    border-color: #111;
+    color: white;
+}
+
+.collection-products{
+    overflow: hidden;
 }
 
 .search-page{
