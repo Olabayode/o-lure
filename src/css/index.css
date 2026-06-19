@@ -494,10 +494,10 @@ body{
 }
 
 .category-section h2{
-    margin-bottom: 32px;
-    font-size: 4rem;
+    margin-bottom: 40px;
+    font-size: 5rem;
     font-weight: 300;
-    letter-spacing: 2px;
+    letter-spacing: 3px;
     text-transform: uppercase;
 }
 
@@ -600,6 +600,209 @@ body{
     color: #cfcfcf;
 }
 
+.products-page{
+    padding: 60px 32px 80px;
+}
+
+/* .products-page h1{
+    margin-bottom: 80px;
+    font-size: 6rem;
+    font-weight: 300;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+} */
+
+.products-grid{
+    display: grid;
+    grid-template-columns:
+    repeat(4, minmax(0, 1fr));
+    gap: 70px 40px;
+}
+
+.product-card{
+    display: flex;
+    transition: transform 0.35s ease;
+    flex-direction: column;
+}
+
+.product-image{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 520px;
+    margin-bottom: 24px;
+    background-color: #fafafa;
+    transition: 0.3s ease;
+}
+
+.product-image img{
+    width: 100%;
+    height: 340px;
+    object-fit: contain;
+    transition: transform 0.4s ease;
+}
+
+.product-card:hover {
+    transform: translateY(10px);
+}
+
+.product-image img{
+    width: 100%;
+    height: 340px;
+    object-fit: contain;
+    transition: transform 0.4s ease;
+}
+
+.product-category{
+    margin-bottom: 10px;
+    color: #888;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.product-card h3{
+    min-height: 90px;
+    margin-bottom: 16px;
+    font-size: 1.5rem;
+    font-weight: 400;
+    line-height: 1.6;
+}
+
+.product-price{
+    margin-bottom: 30px;
+    font-size: 1.8rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.product-card button{
+    width: 100%;
+    padding: 16px;
+    border: 1px solid #111;
+    background-color: transparent;
+    color: #111;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: 0.3s ease;
+}
+
+.product-card button:hover{
+    background-color: #111;
+    color: white;
+}
+
+/* .products-intro{
+    max-width: 600px;
+    margin-bottom: 80px;
+    color: #666;
+    font-size: 1.7rem;
+    line-height: 1.8;
+} */
+
+.products-banner{
+    display: flex;
+    align-items: center;
+    min-height: 350px;
+    margin-bottom: 80px;
+    padding: 80px;
+    background-image:
+    linear-gradient(
+        rgba(0,0,0,0.35),
+        rgba(0,0,0,0.35)
+    ),
+    url('../assets/pinFash4.jpg');
+    background-size: cover;
+    background-position: center;
+    color: white;
+}
+
+.products-banner-content p{
+    margin-bottom: 16px;
+    font-size: 1.2rem;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+}
+
+.products-banner-content h1{
+    margin-bottom: 20px;
+    font-size: 7rem;
+    font-weight: 300;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+}
+
+.products-banner-content span{
+    max-width: 500px;
+    display: block;
+    font-size: 1.8rem;
+    line-height: 1.8;
+}
+
+.product-section{
+    margin-bottom: 180px;
+}
+
+.product-section h2{
+    position: relative;
+    margin-bottom: 18px;
+    font-size: 5.2rem;
+    font-weight: 300;
+    letter-spacing: 6px;
+    text-transform: uppercase;
+    line-height: 1;
+}
+
+.product-section h2::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -15px;
+    width: 80px;
+    height: 2px;
+    background-color: #111;
+}
+
+.section-description{
+    max-width: 420px;
+    margin-bottom: 60px;
+    color: #777;
+    font-size: 1.4rem;
+    letter-spacing: 1px;
+    line-height: 1.8;
+}
+
+.collection-banner{
+    width: 100%;
+
+    height: 420px;
+
+    margin-bottom: 50px;
+
+    object-fit: cover;
+}
+
+
+
+
+
+
+
+@media (max-width: 900px) {
+    .products-grid{
+    grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+}
+}
+
+@media (max-width: 1200px){
+
+    .products-grid{
+        grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+    }
+}
 
 @media (max-width: 720px){
 
@@ -704,6 +907,14 @@ body{
     }
 
     .category-grid{
+        grid-template-columns: 1fr;
+    }
+
+    .products-page{
+    padding: 40px 16px 60px;
+    }
+
+    .products-grid{
         grid-template-columns: 1fr;
     }
 }
