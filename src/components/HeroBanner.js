@@ -34,6 +34,9 @@ function HeroBanner(props)
                 <h2>{product.title}</h2>
                 <p>{product.category}</p>
                 <strong>${product.price}</strong>
+                <button className="hero-button">
+                  Shop Now
+                </button>
               </div>
               <img src={product.image} alt={product.title} />
             </div>
