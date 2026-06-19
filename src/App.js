@@ -118,6 +118,7 @@ function App() {
           <Route exact path='/o-lure/products/:productId' element={<ProductDetails products={products} addToCart={addToCart} />} />
           <Route exact path='/o-lure/search' element={<Search products={products} setProducts={setProducts} addToCart={addToCart} />} />
           <Route exact path='/o-lure/cart' element={<Cart cart={cart} increaseQuantity={increaseQuantity} decreaseQuantity={decreaseQuantity} removeFromCart={removeFromCart} />} />
+          <Route exact path='/o-lure/*' element={<NotFound />} />
           <Route exact path='*' element={<NotFound />} />
         </Routes>
         
