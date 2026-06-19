@@ -1,12 +1,19 @@
+import { useState } from "react";
 import womenBanner from "../assets/women-banner.jpg";
 import menBanner from "../assets/men-banner.jpg";
 import jewelryBanner from "../assets/jewelry-banner.gif";
 
 function Products(props)
 {
+  const [showAllWomensProducts, setShowAllWomensProducts] = useState(false);
+
   const womensProducts = props.products?.filter(
   product => product.category === "women's clothing"
 );
+
+const visibleWomensProducts = showAllWomensProducts
+  ? womensProducts
+  : womensProducts?.slice(0, 4);
 
 const mensProducts = props.products?.filter(
   product => product.category === "men's clothing"
@@ -53,7 +60,7 @@ const jewelryProducts = props.products?.filter(
 
   <div className="products-grid">
 
-    {womensProducts?.map(product => (
+    {visibleWomensProducts?.map(product => (
       <article className="product-card" key={product.id}>
 
         <div className="product-image">
@@ -81,6 +88,16 @@ const jewelryProducts = props.products?.filter(
     
 
       </div>
+
+      {womensProducts?.length > 4 && (
+        <button
+          className="show-more-button"
+          type="button"
+          onClick={() => setShowAllWomensProducts(!showAllWomensProducts)}
+        >
+          {showAllWomensProducts ? 'Show less' : 'Show more'}
+        </button>
+      )}
 
     </section>
 
