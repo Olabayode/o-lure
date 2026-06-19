@@ -1,4 +1,5 @@
 import { Autoplay, Navigation, Pagination } from 'swiper/modules';
+import { Link } from 'react-router-dom';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 import 'swiper/css';
@@ -34,9 +35,9 @@ function HeroBanner(props)
                 <h2>{product.title}</h2>
                 <p>{product.category}</p>
                 <strong>${product.price}</strong>
-                <button className="hero-button">
+                <Link className="hero-button" to={`/o-lure/products/${product.id}`}>
                   Shop Now
-                </button>
+                </Link>
               </div>
               <img src={product.image} alt={product.title} />
             </div>

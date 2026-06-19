@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import { useSearchParams } from "react-router-dom";
 
 function SearchProducts(props)
@@ -117,26 +118,32 @@ function SearchProducts(props)
               key={product.id}
             >
 
-              <div className="search-image">
+              <Link
+                className="search-card-link"
+                to={`/o-lure/products/${product.id}`}
+                onClick={() => window.scrollTo(0, 0)}
+              >
+                <div className="search-image">
 
-                <img
-                  src={product.image}
-                  alt={product.title}
-                />
+                  <img
+                    src={product.image}
+                    alt={product.title}
+                  />
 
-              </div>
+                </div>
 
-              {/* <p className="search-category">
-                {product.category}
-              </p> */}
+                {/* <p className="search-category">
+                  {product.category}
+                </p> */}
 
-              <h3>
-                {product.title.split(' ').slice(0, 4).join(' ')}
-              </h3>
+                <h3>
+                  {product.title.split(' ').slice(0, 4).join(' ')}
+                </h3>
 
-              <p className="search-price">
-                ${product.price}
-              </p>
+                <p className="search-price">
+                  ${product.price}
+                </p>
+              </Link>
 
               <button
                 type="button"

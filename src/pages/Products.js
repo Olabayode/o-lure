@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import womenBanner from "../assets/women-banner.jpg";
 import menBanner from "../assets/men-banner.jpg";
 import jewelryBanner from "../assets/jewelry-banner.gif";
@@ -40,18 +41,24 @@ function Products(props)
     <div className="products-grid">
       {products?.map(product => (
         <article className="product-card" key={product.id}>
-          <div className="product-image">
-            <img
-              src={product.image}
-              alt={product.title}
-            />
-          </div>
+          <Link
+            className="product-card-link"
+            to={`/o-lure/products/${product.id}`}
+            onClick={() => window.scrollTo(0, 0)}
+          >
+            <div className="product-image">
+              <img
+                src={product.image}
+                alt={product.title}
+              />
+            </div>
 
-          <h3>{product.title.split(' ').slice(0, 3).join(' ')}</h3>
+            <h3>{product.title.split(' ').slice(0, 3).join(' ')}</h3>
 
-          <p className="product-price">
-            ${product.price}
-          </p>
+            <p className="product-price">
+              ${product.price}
+            </p>
+          </Link>
 
           <button
             type="button"

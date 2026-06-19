@@ -10,7 +10,7 @@ function Header()
     </div>
 
     <nav className="main-nav">
-      <NavLink to="/o-lure/">Home</NavLink>
+      <NavLink to="/o-lure/" end>Home</NavLink>
       <NavLink to="/o-lure/products">Shop</NavLink>
       <NavLink to="/o-lure/search">Search</NavLink>
       <NavLink to="/o-lure/cart">Cart</NavLink>
