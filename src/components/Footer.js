@@ -37,6 +37,14 @@ function Footer()
             <a href="/">TikTok</a>
         </div>
 
+        <div>
+            <h3>Company</h3>
+
+            <a href="/">About</a>
+            <a href="/">Journal</a>
+            <a href="/">Careers</a>
+        </div>
+
     </footer>
 
 <div className="footer-bottom">

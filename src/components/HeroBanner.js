@@ -7,7 +7,9 @@ import 'swiper/css/pagination';
 
 function HeroBanner(props)
 {
-  const featuredProducts = (props.products || []).slice(0, 6);
+  const featuredProducts = (props.products || [])
+    .filter(product => product.category !== "electronics")
+    .slice(0, 6);
 
   if (!props.products)
   {

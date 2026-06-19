@@ -2,7 +2,7 @@
 @import './reset.css';
 
 #root{
-    /* min-height: 100vh; */
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
 }
@@ -85,6 +85,7 @@ body{
     display: grid;
     place-items: center;
     min-height: 260px;
+    margin: 0 32px;
     overflow: hidden;
 }
 
@@ -496,8 +497,8 @@ body{
 
 .category-grid{
     display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
 }
 
 .category-card{
@@ -553,19 +554,19 @@ body{
 
 .site-footer{
     display: grid;
-    grid-template-columns: 2fr 1fr 1fr 1fr;
-    gap: 60px;
-    margin-top: 60px;
-    padding: 100px 60px;
+    grid-template-columns: 2fr repeat(4, 1fr);
+    gap: 40px;
+    margin-top: 0px;
+    padding: 60px 40px;
     border-top: 1px solid #111;
-    background-color: #111;
+    background-color: #181614;
     color: white;
 }
 
 .footer-brand h2{
-    margin-bottom: 20px;
-    font-size: 3rem;
-    font-weight: 300;
+    margin-bottom: 18px;
+    font-size: 3.8rem;
+    font-weight: 700;
     letter-spacing: 8px;
     text-transform: uppercase;
 }
@@ -592,9 +593,9 @@ body{
 }
 
 .footer-bottom{
-    padding: 24px 60px;
-    background-color: #111;
-    border-top: 1px solid rgba(255,255,255,0.08);
+    padding: 16px 40px;
+    background-color: #0f0e0d;
+    border-top: 1px solid rgba(255,255,255,0.05);
 }
 
 .footer-bottom p{
@@ -606,12 +607,16 @@ body{
 }
 
 .footer-brand p{
-    max-width: 280px;
-    color: #cfcfcf;
+    max-width: 320px;
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    line-height: 1.8;
 }
 
 .products-page{
-    padding: 60px 32px 80px;
+    padding: 0 32px 80px;
 }
 
 .products-grid{
@@ -695,41 +700,36 @@ body{
     color: white;
 }
 
-/* .products-intro{
-    max-width: 600px;
-    margin-bottom: 80px;
-    color: #666;
-    font-size: 1.7rem;
-    line-height: 1.8;
-} */
-
 .products-banner{
-    display: flex;
-    align-items: center;
-    min-height: 420px;
+    display: grid;
+    place-items: center;
+    height: 420px;
     margin-bottom: 80px;
-    padding: 80px;
+    padding: 0 32px;
     background-image:
     linear-gradient(
         rgba(0,0,0,0.35),
         rgba(0,0,0,0.35)
     ),
-    url('../assets/pinFash4.jpg');
+    url('../assets/pinFash7.jpg');
     background-size: cover;
     background-position: center;
     color: white;
 }
 
+.products-banner-content{
+    text-align: center;
+}
+
 .products-banner-content p{
     margin-bottom: 16px;
-    font-size: 1.2rem;
     letter-spacing: 4px;
     text-transform: uppercase;
 }
 
 .products-banner-content h1{
-    margin-bottom: 20px;
-    font-size: 7rem;
+    margin-bottom: 12px;
+    font-size: 6rem;
     font-weight: 300;
     letter-spacing: 4px;
     text-transform: uppercase;
@@ -738,8 +738,8 @@ body{
 .products-banner-content span{
     max-width: 500px;
     display: block;
-    font-size: 1.8rem;
-    line-height: 1.8;
+    font-size: 1.5rem;
+    line-height: 1.6;
 }
 
 .product-section{
@@ -780,6 +780,11 @@ body{
     height: 420px;
     margin-bottom: 50px;
     object-fit: cover;
+}
+
+.collection-banner-men{
+    object-position: center 42%;
+    filter: contrast(1.08) saturate(1.05) brightness(1.03);
 }
 
 .search-page{
@@ -1104,6 +1109,10 @@ body{
 }
 
 @media (max-width: 560px){
+    .cart-banner{
+        margin: 0 16px;
+    }
+
     .category-section{
         padding: 8px 16px 32px;
     }
@@ -1113,7 +1122,7 @@ body{
     }
 
     .products-page{
-    padding: 40px 16px 60px;
+    padding: 0 16px 60px;
     }
 
     .products-grid{

@@ -1,6 +1,6 @@
 import womenBanner from "../assets/women-banner.jpg";
-import menBanner from "../assets/men-banner.jpg";
-import jewelryBanner from "../assets/jewelry-banner.gif";
+import menBanner from "../assets/men-bannerrr.jpg";
+import jewelryBanner from "../assets/jewelry-bannerrr.jpg";
 
 function Products(props)
 {
@@ -90,7 +90,7 @@ const jewelryProducts = props.products?.filter(
     <h2>Men</h2>
 
     <img
-      className="collection-banner"
+      className="collection-banner collection-banner-men"
       src={menBanner}
       alt="Men's Collection"
     />
