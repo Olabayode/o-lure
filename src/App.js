@@ -1,7 +1,8 @@
 import axios from 'axios';
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
+import AddToCartModal from './components/AddToCartModal';
 import Home from './pages/Home';
 import Products from './pages/Products';
 import Search from './pages/Search';
@@ -15,6 +16,8 @@ function App() {
     const savedCart = localStorage.getItem('cart');
     return savedCart ? JSON.parse(savedCart) : [];
   });
+  const [addedProduct, setAddedProduct] = useState(null);
+  const modalTimer = useRef(null);
   const url = "https://fakestoreapi.com/products/";
 
   useEffect(() => {
@@ -34,7 +37,27 @@ function App() {
     localStorage.setItem('cart', JSON.stringify(cart));
   }, [cart]);
 
+  useEffect(() => {
+    return () => {
+      if (modalTimer.current)
+      {
+        clearTimeout(modalTimer.current);
+      }
+    }
+  }, []);
+
   const addToCart = (product) => {
+    setAddedProduct(product);
+
+    if (modalTimer.current)
+    {
+      clearTimeout(modalTimer.current);
+    }
+
+    modalTimer.current = setTimeout(() => {
+      setAddedProduct(null);
+    }, 2500);
+
     setCart(currentCart => {
       const itemInCart = currentCart.find(item => item.id === product.id);
 
@@ -82,6 +105,7 @@ function App() {
   return (
     <>
       <Header />
+      <AddToCartModal product={addedProduct} />
 
       <main className="page-content">
 

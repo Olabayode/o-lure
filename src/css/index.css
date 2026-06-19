@@ -80,6 +80,53 @@ body{
     flex: 1;
 }
 
+.add-cart-modal{
+    position: fixed;
+    top: 104px;
+    right: 28px;
+    z-index: 1200;
+    display: grid;
+    grid-template-columns: 92px minmax(0, 1fr);
+    gap: 18px;
+    width: min(380px, calc(100vw - 32px));
+    padding: 18px;
+    background-color: white;
+    border: 1px solid #111;
+    box-shadow: 0 18px 45px rgba(0,0,0,0.16);
+}
+
+.add-cart-modal img{
+    width: 92px;
+    height: 108px;
+    object-fit: contain;
+    background-color: white;
+}
+
+.add-cart-modal p,
+.add-cart-modal h2{
+    margin: 0;
+}
+
+.add-cart-modal p{
+    margin-bottom: 8px;
+    color: #1f7a3f;
+    font-size: 1.2rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+
+.add-cart-modal h2{
+    margin-bottom: 10px;
+    font-size: 1.5rem;
+    font-weight: 400;
+    line-height: 1.4;
+}
+
+.add-cart-modal strong{
+    font-size: 1.5rem;
+}
+
 .cart-banner{
     position: relative;
     display: grid;
@@ -1059,6 +1106,11 @@ body{
 }
 
 @media (max-width: 720px){
+
+    .add-cart-modal{
+        top: 128px;
+        right: 16px;
+    }
 
     .site-header{
     flex-direction: column;
