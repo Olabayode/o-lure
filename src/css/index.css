@@ -393,6 +393,98 @@ body{
     background-color: #f7f5f2;
 }
 
+.hero-brand-banner{
+    position: relative;
+    display: grid;
+    place-items: center;
+    min-height: 520px;
+    overflow: hidden;
+}
+
+.hero-brand-banner::before{
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: var(--hero-banner-image);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    opacity: 0.8;
+}
+
+.hero-brand-content{
+    position: relative;
+    z-index: 1;
+    text-align: center;
+}
+
+.hero-brand-banner h1{
+    margin: 0;
+    color: #111;
+    font-family: Didot, "Bodoni 72", "Bodoni MT", "Times New Roman", serif;
+    font-size: clamp(5rem, 12vw, 14rem);
+    font-weight: 400;
+    letter-spacing: 10px;
+    line-height: 1;
+    text-align: center;
+}
+
+.hero-brand-banner h1 span{
+    color: #b78a28;
+}
+
+.hero-brand-content p{
+    margin: 18px 0 28px;
+    color: #111;
+    font-size: clamp(1.6rem, 3vw, 3rem);
+    font-weight: 400;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+}
+
+.hero-brand-actions{
+    display: flex;
+    justify-content: center;
+    gap: 18px;
+    flex-wrap: wrap;
+}
+
+.hero-brand-actions button,
+.hero-brand-actions a{
+    min-width: 150px;
+    padding: 16px 28px;
+    border: 1px solid #111;
+    font-size: 1.2rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.hero-brand-actions button{
+    background-color: white;
+    color: #111;
+}
+
+.hero-brand-actions a{
+    background-color: #111;
+    color: white;
+}
+
+.hero-brand-actions button:hover{
+    background-color: #b78a28;
+    border-color: #b78a28;
+    color: white;
+}
+
+.hero-brand-actions a:hover{
+    background-color: #b78a28;
+    border-color: #b78a28;
+}
+
 .hero-banner .swiper{
     width: 100%;
 }
@@ -1280,6 +1372,14 @@ body{
     .add-cart-modal{
         top: 128px;
         right: 16px;
+    }
+
+    .hero-brand-banner{
+        min-height: 360px;
+    }
+
+    .hero-brand-banner h1{
+        letter-spacing: 5px;
     }
 
     .site-header{
