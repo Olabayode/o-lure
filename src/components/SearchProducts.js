@@ -10,7 +10,12 @@ function SearchProducts(props)
   const initialQuery = searchParams.get('query') || '';
 
   useEffect(() => {
-    setSortedProducts(props.products || []);
+    const randomizedProducts = [...(props.products || [])]
+      .filter(product => product.category !== "electronics")
+      .sort(() => Math.random() - 0.5)
+      .slice(0, 8);
+
+    setSortedProducts(randomizedProducts);
   }, [props.products]);
 
   useEffect(() => {
@@ -85,6 +90,8 @@ function SearchProducts(props)
 
       </div>
 
+      <h2 className="trending-products-title">Trending Products</h2>
+
       {/* <p className="search-count">
         {sortedProducts
           ?.filter(product =>
@@ -98,9 +105,6 @@ function SearchProducts(props)
       <div className="search-results">
 
         {sortedProducts
-            ?.filter(product =>
-              product.category !== "electronics"
-            )
             ?.filter(product =>
               product.title
                 .toLowerCase()
