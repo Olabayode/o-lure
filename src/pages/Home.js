@@ -1,9 +1,9 @@
 import HeroBanner from "../components/HeroBanner";
 import SecondaryBanner from "../components/SecondaryBanner";
 import electronicsImage from "../assets/electronics.avif";
-import jewelryImage from "../assets/jewelry.avif";
-import mensClothingImage from "../assets/mens clothing.avif";
-import womensClothingImage from "../assets/womens clothing.avif";
+import jewelryImage from "../assets/j2.jpg";
+import mensClothingImage from "../assets/pcM.jpg";
+import womensClothingImage from "../assets/pc1.jpg";
 
 function Home(props)
 {
