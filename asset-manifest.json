@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/o-lure/static/css/main.60f6c275.css",
-    "main.js": "/o-lure/static/js/main.aeacd873.js",
+    "main.css": "/o-lure/static/css/main.c7e6b789.css",
+    "main.js": "/o-lure/static/js/main.bf42a988.js",
     "static/media/heroBanner.png": "/o-lure/static/media/heroBanner.479ffdae89a8956a8e51.png",
     "static/media/jewelry-banner.gif": "/o-lure/static/media/jewelry-banner.6e39fffd8bf39eefc26b.gif",
     "static/media/womens clothing.avif": "/o-lure/static/media/womens clothing.e4a70af49e811edb54b6.avif",
@@ -13,11 +13,11 @@
     "static/media/men-banner.jpg": "/o-lure/static/media/men-banner.b96d0035b09bcb828061.jpg",
     "static/media/pinFash4.jpg": "/o-lure/static/media/pinFash4.dd446c68e1152568e952.jpg",
     "index.html": "/o-lure/index.html",
-    "main.60f6c275.css.map": "/o-lure/static/css/main.60f6c275.css.map",
-    "main.aeacd873.js.map": "/o-lure/static/js/main.aeacd873.js.map"
+    "main.c7e6b789.css.map": "/o-lure/static/css/main.c7e6b789.css.map",
+    "main.bf42a988.js.map": "/o-lure/static/js/main.bf42a988.js.map"
   },
   "entrypoints": [
-    "static/css/main.60f6c275.css",
-    "static/js/main.aeacd873.js"
+    "static/css/main.c7e6b789.css",
+    "static/js/main.bf42a988.js"
   ]
 }
