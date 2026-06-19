@@ -12,10 +12,19 @@ function Cart(props)
     <>
       <section className="cart-banner">
         <img src={cartBannerImage} alt="" />
-        <h1>CART</h1>
+        <div className="cart-banner-content">
+          <p>SHOPPING BAG</p>
+          <h1>Your Collection</h1>
+        </div>
       </section>
       {props.cart.length === 0 ? (
-        <p className="empty-cart">Your cart is empty.</p>
+        <div className="empty-cart">
+
+  <h2>Your cart is empty</h2>
+    <p>
+      Discover timeless pieces and build your collection.
+    </p>
+  </div>
       ) : (
         <section className="cart-page">
           <div className="cart-content">

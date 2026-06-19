@@ -1,11 +1,12 @@
 import { useState, useEffect } from "react";
-import { useSearchParams } from 'react-router-dom';
+import { useSearchParams } from "react-router-dom";
 
 function SearchProducts(props)
 {
   const [searchParams, setSearchParams] = useSearchParams();
   const [query, setQuery] = useState('');
   const [sortedProducts, setSortedProducts] = useState([]);
+
   const initialQuery = searchParams.get('query') || '';
 
   useEffect(() => {
@@ -15,61 +16,138 @@ function SearchProducts(props)
   useEffect(() => {
     if (query !== initialQuery)
     {
-      setSearchParams({query: query || ''}, {replace: true});
+      setSearchParams(
+        { query: query || '' },
+        { replace: true }
+      );
     }
-  }, [initialQuery, query, setSearchParams]);
+  }, [query, initialQuery, setSearchParams]);
 
   const sort = (criteria) => {
     let sortedArray = [...sortedProducts];
+
     if (criteria === 'Title')
     {
-      sortedArray.sort((a, b) => a.title.localeCompare(b.title));
+      sortedArray.sort((a, b) =>
+        a.title.localeCompare(b.title)
+      );
     }
     else if (criteria === 'Price')
     {
-      sortedArray.sort((a, b) => a.price - b.price);
+      sortedArray.sort((a, b) =>
+        a.price - b.price
+      );
     }
-    else 
-    {
-      sortedArray.sort((a, b) => a.id - b.id);
-    }
+
     setSortedProducts(sortedArray);
-  }
+  };
 
   return(
-    <>
-      <div>
-        <input 
-          type='text'
-          placeholder='Search products...'
-          value={query}
-          onChange={event => {
-            setQuery(event.target.value);
-          }}
-        />
-        <input 
-          type='button' 
-          value='Title'
-          onClick={event => {
-            sort(event.target.value);
-          }}
-        /><input 
-          type='button' 
-          value='Price'
-          onClick={event => {
-            sort(event.target.value);
-          }}
-        />
+    <section className="search-page">
+
+      <div className="search-header">
+
+        <p>DISCOVER</p>
+
+        <h1>Search Collection</h1>
+
+        <span>
+          Explore curated pieces across women, men and jewelry.
+        </span>
+
       </div>
-      <ul>
-        {sortedProducts?.sort((a, b) => a.sortBy - b.sortBy).filter(p => p?.title.toLowerCase().includes(query?.toLowerCase())).map(link => (
-          <li key={link.id}>
-            <p>{link.title} ${link.price}</p>
-            <button type="button" onClick={() => props.addToCart(link)}>Add</button>
-          </li>
-        ))}
-      </ul>
-    </>
+
+      <div className="search-controls">
+
+        <input
+          className="search-input"
+          type="text"
+          placeholder="Search products..."
+          value={query}
+          onChange={(event) =>
+            setQuery(event.target.value)
+          }
+        />
+
+        <button
+          type="button"
+          onClick={() => sort('Title')}
+        >
+          Sort A–Z
+        </button>
+
+        <button
+          type="button"
+          onClick={() => sort('Price')}
+        >
+          Sort by Price
+        </button>
+
+      </div>
+
+      {/* <p className="search-count">
+        {sortedProducts
+          ?.filter(product =>
+            product.title
+              .toLowerCase()
+              .includes(query.toLowerCase())
+          ).length}
+        {' '}results
+      </p> */}
+
+      <div className="search-results">
+
+        {sortedProducts
+            ?.filter(product =>
+              product.category !== "electronics"
+            )
+            ?.filter(product =>
+              product.title
+                .toLowerCase()
+                .includes(query.toLowerCase())
+            )
+            .map(product => (
+
+            <article
+              className="search-card"
+              key={product.id}
+            >
+
+              <div className="search-image">
+
+                <img
+                  src={product.image}
+                  alt={product.title}
+                />
+
+              </div>
+
+              {/* <p className="search-category">
+                {product.category}
+              </p> */}
+
+              <h3>
+                {product.title.split(' ').slice(0, 4).join(' ')}
+              </h3>
+
+              <p className="search-price">
+                ${product.price}
+              </p>
+
+              <button
+                type="button"
+                onClick={() => props.addToCart(product)}
+              >
+                Add to Cart
+              </button>
+
+            </article>
+
+          ))}
+
+      </div>
+
+    </section>
   );
 }
 

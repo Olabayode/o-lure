@@ -22,7 +22,7 @@ body{
     padding: 0 48px;
     background: rgba(255,255,255,0.95);
     backdrop-filter: blur(12px);
-    border-bottom: 1px solid #efefef;
+    border-bottom: 1px solid #111;
 }
 
 .logo{
@@ -112,15 +112,30 @@ body{
 }
 
 .empty-cart{
-    min-height: 250px;
-
+    min-height: 320px;
+    flex-direction: column;
     display: flex;
     align-items: center;
     justify-content: center;
-
+    text-align: center;
     font-size: 2rem;
 
     color: #666;
+}
+
+.empty-cart h2{
+    margin-bottom: 16px;
+    font-size: 4rem;
+    font-weight: 300;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+.empty-cart p{
+    max-width: 450px;
+    color: #666;
+    font-size: 1.6rem;
+    line-height: 1.8;
 }
 
 .cart-page{
@@ -145,7 +160,7 @@ body{
     justify-content: space-between;
     gap: 24px;
     padding-bottom: 20px;
-    border-bottom: 1px solid #d9d9d9;
+    border-bottom: 1px solid #111;
 }
 
 .cart-heading h2,
@@ -178,7 +193,7 @@ body{
     gap: 28px;
     align-items: start;
     padding: 32px 0;
-    border-bottom: 1px solid #d9d9d9;
+    border-bottom: 1px solid #111;
 }
 
 .cart-item-image{
@@ -215,11 +230,31 @@ body{
     gap: 18px;
 }
 
+.cart-banner-content{
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    color: white;
+}
+
+.cart-banner-content p{
+    margin-bottom: 16px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+}
+
+.cart-banner-content h1{
+    font-size: 6rem;
+    font-weight: 300;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+}
+
 .quantity-control{
     display: inline-grid;
     grid-template-columns: 40px 48px 40px;
     align-items: center;
-    border: 1px solid #1f2933;
+    border: 1px solid #111;
 }
 
 .quantity-control button{
@@ -261,7 +296,7 @@ body{
     top: 24px;
     padding: 28px;
     background-color: white;
-    border: 1px solid #d9d9d9;
+    border: 1px solid #111;
 }
 
 .cart-summary h2{
@@ -280,7 +315,7 @@ body{
 
 .summary-total{
     margin-top: 8px;
-    border-bottom: 0;
+    border-bottom: 1px solid #111;
     font-size: 18px;
     font-weight: 700;
 }
@@ -369,7 +404,7 @@ body{
     background-color: #111;
     font-weight: 600;
     color: white;
-    border: none;
+    border: 1px solid #111;
     text-transform: uppercase;
     letter-spacing: 2px;
     font-size: 1.2rem;
@@ -377,13 +412,12 @@ body{
 }
 
 .hero-button:hover{
-    background-color: #9e0b0b;
-     /* #333 */
+    background-color: #333;
 }
 
 .campaign-banner{
     position: relative;
-    min-height: 520px;
+    min-height: 420px;
     margin: 24px 48px 60px;
     background-position: center 15%;
     background-size: cover;
@@ -448,47 +482,6 @@ body{
     color: white;
 }
 
-/* .secondary-banner{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 24px;
-    margin: 24px 32px;
-    padding: 28px 32px;
-    background-color: #102a43;
-    color: white;
-}
-
-.secondary-banner p,
-.secondary-banner h2{
-    margin: 0;
-}
-
-.secondary-banner p{
-    margin-bottom: 8px;
-    font-weight: 700;
-    text-transform: uppercase;
-}
-
-.secondary-banner h2{
-    margin-bottom: 8px;
-    font-size: 32px;
-}
-
-.secondary-banner span{
-    display: block;
-}
-
-.secondary-banner a{
-    flex-shrink: 0;
-    padding: 12px 18px;
-    background-color: white;
-    color: #102a43;
-    font-weight: 700;
-    text-decoration: none;
-} */
-
-
 .category-section{
     padding: 80px 48px;
 }
@@ -511,7 +504,7 @@ body{
     position: relative;
     overflow: hidden;
     background-color: white;
-    border: none;
+    border: 1px solid #111;
     cursor: pointer;
     transition: transform 0.4s ease;
 }
@@ -564,7 +557,7 @@ body{
     gap: 40px;
     margin-top: 60px;
     padding: 80px 60px;
-    border-top: 1px solid rgba(255,255,255,0.08);
+    border-top: 1px solid #111;
     background-color: #111;
     color: white;
 }
@@ -704,7 +697,7 @@ body{
 .products-banner{
     display: flex;
     align-items: center;
-    min-height: 350px;
+    min-height: 420px;
     margin-bottom: 80px;
     padding: 80px;
     background-image:
@@ -783,24 +776,233 @@ body{
     object-fit: cover;
 }
 
+.search-page{
+    padding: 80px 32px;
+}
 
+.search-header{
+    margin-bottom: 60px;
+}
 
+.search-header p{
+    margin-bottom: 16px;
+    font-size: 1.2rem;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: #777;
+}
 
+.search-header h1{
+    margin-bottom: 20px;
+    font-size: 6rem;
+    font-weight: 300;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+}
 
+.search-header span{
+    display: block;
+    max-width: 500px;
+    color: #666;
+    font-size: 1.7rem;
+    line-height: 1.8;
+}
 
+.search-controls{
+    display: flex;
+    gap: 16px;
+    margin-bottom: 60px;
+    flex-wrap: wrap;
+}
 
-@media (max-width: 900px) {
-    .products-grid{
+.search-input{
+    flex: 1;
+    min-width: 300px;
+    padding: 16px 20px;
+    border: 1px solid #111;
+    background-color: white;
+}
+
+.search-controls button{
+    padding: 16px 24px;
+    border: 1px solid #111;
+    background-color: white;
+    color: #111;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: 0.3s ease;
+}
+
+.search-controls button:hover{
+    background-color: #111;
+    color: white;
+}
+
+.search-results{
+    display: grid;
     grid-template-columns:
-    repeat(2, minmax(0, 1fr));
+    repeat(4, minmax(0, 1fr));
+    gap: 60px 40px;
 }
+
+.search-card{
+    padding-bottom: 40px;
+    transition: transform 0.3s ease;
 }
+
+.search-card:hover{
+    transform: translateY(-8px);
+    
+}
+
+.search-image{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 420px;
+    margin-bottom: 24px;
+    background-color: #fafafa;
+}
+
+.search-image img{
+
+    .search-image{
+        overflow: hidden;
+    }
+
+    .search-image img{
+        transition: transform .4s ease;
+    }
+
+    .search-card:hover .search-image img{
+        transform: scale(1.04);
+    }
+
+    width: 100%;
+    height: 320px;
+    object-fit: contain;
+}
+
+.search-category{
+    margin-bottom: 10px;
+    color: #888;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.search-card h3{
+    font-size: 1.5rem;
+    font-weight: 400;
+    line-height: 1.7;
+    letter-spacing: 0.5px;
+    margin-top: 20px;
+    margin-bottom: 24px;
+    min-height: 50px;
+}
+
+.search-price{
+    margin-bottom: 28px;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.search-card button{
+    width: 100%;
+    padding: 14px;
+    border: 1px solid #111;
+    background-color: transparent;
+    color: #111;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: 0.3s ease;
+}
+
+.search-card button:hover{
+    background-color: #111;
+    color: white;
+}
+
+.empty-cart{
+    min-height: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.empty-cart h2{
+    margin-bottom: 16px;
+    font-size: 3rem;
+    font-weight: 300;
+}
+
+.empty-cart p{
+    color: #666;
+}
+
+
+.not-found{
+    min-height: 60vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 40px;
+}
+
+.not-found p{
+    margin-bottom: 16px;
+    font-size: 1.4rem;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: #777;
+}
+
+.not-found h1{
+    margin-bottom: 24px;
+    font-size: 6rem;
+    font-weight: 300;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+}
+
+.not-found span{
+    max-width: 500px;
+    color: #666;
+    line-height: 1.8;
+}
+
 
 @media (max-width: 1200px){
 
     .products-grid{
         grid-template-columns:
         repeat(3, minmax(0, 1fr));
+    }
+
+    .search-results{
+    grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+}
+}
+
+@media (max-width: 900px) {
+
+    .category-grid{
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .products-grid{
+    grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+}
+
+    .search-results{
+        grid-template-columns:
+        repeat(2, minmax(0, 1fr));
     }
 }
 
@@ -895,12 +1097,6 @@ body{
 }
 }
 
-@media (max-width: 900px){
-    .category-grid{
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-}
-
 @media (max-width: 560px){
     .category-section{
         padding: 8px 16px 32px;
@@ -917,4 +1113,16 @@ body{
     .products-grid{
         grid-template-columns: 1fr;
     }
+
+    .search-page{
+    padding: 40px 16px;
+}
+
+.search-results{
+    grid-template-columns: 1fr;
+}
+
+.search-header h1{
+    font-size: 4rem;
+}
 }
