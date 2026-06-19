@@ -1,13 +1,23 @@
 {
   "files": {
-    "main.css": "/o-lure/static/css/main.d978ef67.css",
-    "main.js": "/o-lure/static/js/main.3ad0ab40.js",
+    "main.css": "/o-lure/static/css/main.60f6c275.css",
+    "main.js": "/o-lure/static/js/main.aeacd873.js",
+    "static/media/heroBanner.png": "/o-lure/static/media/heroBanner.479ffdae89a8956a8e51.png",
+    "static/media/jewelry-banner.gif": "/o-lure/static/media/jewelry-banner.6e39fffd8bf39eefc26b.gif",
+    "static/media/womens clothing.avif": "/o-lure/static/media/womens clothing.e4a70af49e811edb54b6.avif",
+    "static/media/pcM.jpg": "/o-lure/static/media/pcM.cabd03c6c46536739aa8.jpg",
+    "static/media/pc1.jpg": "/o-lure/static/media/pc1.602299628495102806aa.jpg",
+    "static/media/j2.jpg": "/o-lure/static/media/j2.87abce92117e99ca3f85.jpg",
+    "static/media/women-banner.jpg": "/o-lure/static/media/women-banner.d57ee0644d0bbe0ce848.jpg",
+    "static/media/pinFash1.jpg": "/o-lure/static/media/pinFash1.ba0c94ed2a50ed7c8b22.jpg",
+    "static/media/men-banner.jpg": "/o-lure/static/media/men-banner.b96d0035b09bcb828061.jpg",
+    "static/media/pinFash4.jpg": "/o-lure/static/media/pinFash4.dd446c68e1152568e952.jpg",
     "index.html": "/o-lure/index.html",
-    "main.d978ef67.css.map": "/o-lure/static/css/main.d978ef67.css.map",
-    "main.3ad0ab40.js.map": "/o-lure/static/js/main.3ad0ab40.js.map"
+    "main.60f6c275.css.map": "/o-lure/static/css/main.60f6c275.css.map",
+    "main.aeacd873.js.map": "/o-lure/static/js/main.aeacd873.js.map"
   },
   "entrypoints": [
-    "static/css/main.d978ef67.css",
-    "static/js/main.3ad0ab40.js"
+    "static/css/main.60f6c275.css",
+    "static/js/main.aeacd873.js"
   ]
 }
